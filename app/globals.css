@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0d0d0d;
+  --foreground: #ffffff;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+}
+
+/* hide scrollbar for nav overflow */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
