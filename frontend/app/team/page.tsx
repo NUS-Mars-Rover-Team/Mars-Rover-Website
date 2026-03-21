@@ -14,7 +14,7 @@ type Subsystem = {
   members: Member[];
 };
 
-function PhotoPlaceholder({ src, name }: { src: string; name: string }) {
+function PhotoPlaceholder({ src }: { src: string }) {
   const imgSrc = src.startsWith("http") ? src : src ? `/team/${src}` : "";
   return (
     <div
@@ -31,9 +31,6 @@ function PhotoPlaceholder({ src, name }: { src: string; name: string }) {
           }}
         />
       )}
-      <div className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-[#333] pointer-events-none select-none">
-        {name.charAt(0)}
-      </div>
     </div>
   );
 }
@@ -88,7 +85,7 @@ export default function MeetTheTeam() {
                 className="rounded-xl overflow-hidden border"
                 style={{ borderColor: "#e05a1a33", backgroundColor: "#111" }}
               >
-                <PhotoPlaceholder src={leader.photo} name={leader.name} />
+                <PhotoPlaceholder src={leader.photo} />
                 <div className="p-5">
                   <div className="flex items-start justify-between gap-2 mb-1">
                     <h3 className="text-white font-semibold">{leader.name}</h3>
@@ -133,7 +130,7 @@ export default function MeetTheTeam() {
                     borderColor: member.isLead ? "#e05a1a33" : "rgba(255,255,255,0.05)",
                   }}
                 >
-                  <PhotoPlaceholder src={member.photo} name={member.name} />
+                  <PhotoPlaceholder src={member.photo} />
                   <div className="p-5">
                     <div className="flex items-start justify-between gap-2 mb-1">
                       <h3 className="text-white font-semibold">{member.name}</h3>
