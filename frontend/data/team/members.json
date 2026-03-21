@@ -1,0 +1,222 @@
+{
+  "leadership": [
+    {
+      "name": "Akash Mukherjee",
+      "role": "Team Lead",
+      "major": "Mechanical Engineering",
+      "intro": "Leading the second batch of the NUS Mars Rover Team in our attempt to qualify for the first time from NUS and Southeast Asia for the University Rover Challenge.",
+      "photo": "https://drive.google.com/thumbnail?id=19Jc8hMj0DlUfyigf-g_PIRPILfUebmyW&sz=w400",
+      "isLead": true
+    },
+    {
+      "name": "Jay Shah",
+      "role": "Deputy Team Lead",
+      "major": "",
+      "intro": "",
+      "photo": "",
+      "isLead": true
+    }
+  ],
+  "subsystems": [
+    {
+      "name": "Chassis — Mechanical",
+      "members": [
+        {
+          "name": "Lu Enze",
+          "role": "Team Lead",
+          "major": "Industrial Design",
+          "intro": "As an Engineer Designer, I specialize in Prototype → Product. With 10 years of CAD experience, I pursue a well orchestrated balance of design constraints and engineering requirements in a product that meets standards and exhibits excellence.",
+          "photo": "https://drive.google.com/thumbnail?id=1lLvs9aVa1iF1rZbJh9X10DvLKwv0ZX-l&sz=w400",
+          "isLead": true
+        }
+      ]
+    },
+    {
+      "name": "Chassis — Electrical",
+      "members": [
+        {
+          "name": "Arnav Mahajan",
+          "role": "Electronics Team Lead",
+          "major": "Electrical Engineering",
+          "intro": "Loves late-night peace, football, and good food. Always up for spontaneous hangouts and new adventures abroad. Reach out if you've got an internship, job, or a side quest to another country!",
+          "photo": "https://drive.google.com/thumbnail?id=1YdHTJ1WW15wmiaEdVp_7bFyP2pAq-B83&sz=w400",
+          "isLead": true
+        },
+        {
+          "name": "Shriradhya Bihani",
+          "role": "Electronics Engineer",
+          "major": "Electrical Engineering",
+          "intro": "I enjoy working on robotics and embedded systems, with a focus on building practical and reliable solutions.",
+          "photo": "https://drive.google.com/thumbnail?id=1izKmYTg9uOJFN_8oxpL6dT9T0W4Xjx0X&sz=w400",
+          "isLead": false
+        }
+      ]
+    },
+    {
+      "name": "Robotic Arm",
+      "members": [
+        {
+          "name": "Made Yoga",
+          "role": "Team Lead",
+          "major": "Electrical Engineering",
+          "intro": "Leading the robotic arm subsystem, overseeing mechanical and electrical integration to deliver a reliable and precise arm for mission tasks.",
+          "photo": "https://drive.google.com/thumbnail?id=1PA_otqN2IzGTRpaN9eiLk4g_26b_nLqG&sz=w400",
+          "isLead": true
+        },
+        {
+          "name": "Bong Jia Yao",
+          "role": "Mechanical Engineer",
+          "major": "Mechanical Engineering",
+          "intro": "Interested in robotics with a focus on mechanical design and system dynamics. Contributed to the project by designing the robotic arm and end effector, performing actuator and component selection, and improving motion stability through vibration reduction, damping, and iterative testing.",
+          "photo": "https://drive.google.com/thumbnail?id=1bnGPLc7N0uex3-XljjXrVow_tjFI6p7T&sz=w400",
+          "isLead": false
+        },
+        {
+          "name": "Muhammad Muaadh",
+          "role": "Autonomous Typing Engineer",
+          "major": "Electrical Engineering",
+          "intro": "Electrical Engineering student working on autonomous typing for the Mars Rover team. I work on the robotic arm's typing system using computer vision and ArUco markers. When I'm not coding robots, I'm probably catching up on sleep.",
+          "photo": "",
+          "isLead": false
+        },
+        {
+          "name": "Mike",
+          "role": "Mechanical Engineer",
+          "major": "Mechanical Engineering",
+          "intro": "I like to build and fix stuff. I've been interested in robotics since primary school.",
+          "photo": "https://drive.google.com/thumbnail?id=1v3pu66Iok6sv0aokF9Y-aZJ5vVzljLyz&sz=w400",
+          "isLead": false
+        },
+        {
+          "name": "Manya Gupta",
+          "role": "Control Systems Software Engineer",
+          "major": "Electrical Engineering",
+          "intro": "Hardware builder obsessed with making electrons behave and machines move. I once almost set my lab on fire during a test, which felt like an honest introduction to hardware. Now I build robots, systems, and prototypes that survive slightly longer than my early experiments.",
+          "photo": "https://drive.google.com/thumbnail?id=1voPVWU9JniRx1wKko4AfgW7grs_Gy0fR&sz=w400",
+          "isLead": false
+        }
+      ]
+    },
+    {
+      "name": "GNSS & Comms",
+      "members": [
+        {
+          "name": "Mayukh Ghosh",
+          "role": "Team Lead",
+          "major": "Electrical Engineering",
+          "intro": "Leads the architecture and integration of the rover's RF communications, antenna systems, and GNSS positioning, enabling long-range wireless command and telemetry, real-time data links, and reliable localization during operations.",
+          "photo": "https://drive.google.com/thumbnail?id=1V6pG82bCU-Kx8QeTWtFyfxKSSDu2WH2H&sz=w400",
+          "isLead": true
+        },
+        {
+          "name": "Dhruv Srivastava",
+          "role": "Electronics Engineer",
+          "major": "Electrical Engineering",
+          "intro": "Responsible for developing and optimizing the electrical side of the communication subsystem for the NUS Mars Rover.",
+          "photo": "https://drive.google.com/thumbnail?id=1zWwQMqY_Jlk_Q0wXMcbFTwXD50hgc-PU&sz=w400",
+          "isLead": false
+        }
+      ]
+    },
+    {
+      "name": "Autonomous Navigation",
+      "members": [
+        {
+          "name": "Smeet Ronak",
+          "role": "Software Engineer",
+          "major": "Computer Engineering",
+          "intro": "I enjoy software, logical reasoning and problem solving. Usually working on something new, debugging something old, or figuring out why a certain bug fixed itself.",
+          "photo": "https://drive.google.com/thumbnail?id=1yqphpgLi1c_xQjckHKZKOfCdXIU9uuB7&sz=w400",
+          "isLead": false
+        },
+        {
+          "name": "Eugene Quek",
+          "role": "Software Engineer",
+          "major": "Computer Engineering",
+          "intro": "I enjoy working hard when it matters the most and helping my teammates with any situation. I also enjoy playing video games a lot.",
+          "photo": "",
+          "isLead": false
+        }
+      ]
+    },
+    {
+      "name": "Drone",
+      "members": [
+        {
+          "name": "Trijal Srimal",
+          "role": "Team Lead",
+          "major": "",
+          "intro": "",
+          "photo": "",
+          "isLead": true
+        },
+        {
+          "name": "Smeet Ronak",
+          "role": "Electronics Engineer",
+          "major": "Computer Engineering",
+          "intro": "I enjoy software, logical reasoning and problem solving. Usually working on something new, debugging something old, or figuring out why a certain bug fixed itself.",
+          "photo": "https://drive.google.com/thumbnail?id=1yqphpgLi1c_xQjckHKZKOfCdXIU9uuB7&sz=w400",
+          "isLead": false
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "members": [
+        {
+          "name": "Marcus Lee Wei",
+          "role": "Team Lead",
+          "major": "Electrical Engineering",
+          "intro": "Lifelong maker and hobbyist leading our science subsystem to greater heights in URC2026/27. Skilled in CAD, electronics and always open to learn new things, I intend to help create a competitive subsystem on the international stage.",
+          "photo": "https://drive.google.com/thumbnail?id=1mUb98Dd-KT72zZbHlQLZSjVbE-_eoU3e&sz=w400",
+          "isLead": true
+        },
+        {
+          "name": "Seow Cheng Si",
+          "role": "Software & Electronics Engineer",
+          "major": "Computer Engineering",
+          "intro": "Responsible for the Software and Electronics Integration of various parts of the Science Subsystem, and designing the GUI for operator control through the whole pipeline in the Science Mission.",
+          "photo": "https://drive.google.com/thumbnail?id=1Sp_0CiKXIV86DOA8UyjlguBenJvnf03D&sz=w400",
+          "isLead": false
+        },
+        {
+          "name": "Guda Omkar",
+          "role": "Mechanical Engineer",
+          "major": "Mechanical Engineering",
+          "intro": "I'm a Y2 ME student who enjoys CAD and mechanical design.",
+          "photo": "https://drive.google.com/thumbnail?id=17EvQwrRZ_fsSN2P27YUx--B-2vxRHbya&sz=w400",
+          "isLead": false
+        },
+        {
+          "name": "Joey Liew Zi Yi",
+          "role": "Soil Analysis Expert",
+          "major": "Environmental Studies",
+          "intro": "Hi all! I'm a Year 2 environmental studies student doing minors in Geoscience and Geographic Information Systems. I am interested in physical geography, hence why I am helping out with the soil analysis portion of this project!",
+          "photo": "https://drive.google.com/thumbnail?id=1yhN9aj9-7KfrEDLNx1j_EEZ4XPnwg-Gd&sz=w400",
+          "isLead": false
+        },
+        {
+          "name": "Arnav Mahajan",
+          "role": "Electronics Engineer",
+          "major": "Electrical Engineering",
+          "intro": "Loves late-night peace, football, and good food. Always up for spontaneous hangouts and new adventures abroad. Reach out if you've got an internship, job, or a side quest to another country!",
+          "photo": "https://drive.google.com/thumbnail?id=1YdHTJ1WW15wmiaEdVp_7bFyP2pAq-B83&sz=w400",
+          "isLead": false
+        }
+      ]
+    },
+    {
+      "name": "Website",
+      "members": [
+        {
+          "name": "Ow Jun Duan",
+          "role": "Website Developer",
+          "major": "Computer Science",
+          "intro": "I am a Year 2 Computer Science student specializing in AI/ML and CyberSecurity. I like to make interesting full-stack projects and play basketball during my free time.",
+          "photo": "https://drive.google.com/thumbnail?id=1AHHqrhp4CciYy485C0GF3rQPenuKmx8j&sz=w400",
+          "isLead": true
+        }
+      ]
+    }
+  ]
+}
