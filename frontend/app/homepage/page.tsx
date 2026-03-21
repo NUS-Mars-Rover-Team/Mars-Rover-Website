@@ -92,10 +92,6 @@ export default function Homepage() {
               className="absolute inset-0 rounded-2xl"
               style={{ boxShadow: "inset 0 0 60px rgba(0,0,0,0.4)" }}
             />
-            <div
-              className="absolute bottom-0 left-0 right-0 h-1"
-              style={{ background: "linear-gradient(to right, #e05a1a, transparent)" }}
-            />
           </div>
         </div>
       </section>
@@ -190,9 +186,8 @@ export default function Homepage() {
                 className="w-full h-full"
                 style={{
                   backgroundImage: `url('/homepage/${gallery.featuredImage}')`,
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center 60%",
                 }}
               />
             </div>
@@ -208,8 +203,7 @@ export default function Homepage() {
                     className="w-full h-full"
                     style={{
                       backgroundImage: `url('/homepage/${img}')`,
-                      backgroundSize: "contain",
-                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
                       backgroundPosition: "center",
                       minHeight: "140px",
                     }}
@@ -233,8 +227,7 @@ export default function Homepage() {
                   className="w-full h-full absolute inset-0"
                   style={{
                     backgroundImage: `url('/homepage/${img}')`,
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
                 />
