@@ -1,4 +1,5 @@
 import Link from "next/link";
+import heroBg from "../../data/aboutus/hero-bg.png";
 import content from "../../data/aboutus/content.json";
 
 export default function AboutUs() {
@@ -6,11 +7,11 @@ export default function AboutUs() {
     <div className="min-h-screen bg-[#0a0a0a] text-white" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
 
       {/* ── Hero ── */}
-      <section className="relative flex items-end justify-start pt-14" style={{ minHeight: "90vh" }}>
+      <section className="relative flex items-end justify-start pt-14 min-h-[55vh] md:min-h-[90vh]">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/aboutus/hero-bg.png')",
+            backgroundImage: `url(${heroBg.src})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundColor: "#111",
@@ -67,26 +68,39 @@ export default function AboutUs() {
 
       {/* ── Outreach Goals ── */}
       <section className="py-20 px-6" style={{ backgroundColor: "#0a0a0a" }}>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <p className="text-sm font-medium tracking-widest uppercase mb-3" style={{ color: "#e05a1a" }}>
             Outreach
           </p>
           <h2 className="text-3xl font-bold text-white mb-12">Outreach Goals</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {content.outreachGoals.map((goal) => (
-              <div
-                key={goal.title}
-                className="rounded-xl p-6 border border-white/5"
-                style={{ backgroundColor: "#111" }}
-              >
-                <div
-                  className="w-8 h-1 rounded-full mb-4"
-                  style={{ backgroundColor: "#e05a1a" }}
-                />
-                <h3 className="text-white font-semibold text-lg mb-3">{goal.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{goal.description}</p>
-              </div>
-            ))}
+          <div className="flex flex-col gap-12">
+            {content.outreachGoals.map((goal) => {
+              const validImages = goal.images.filter((img): img is string => img !== null);
+              return (
+                <div key={goal.title} className="border-t border-white/5 pt-10">
+                  <div className="w-8 h-1 rounded-full mb-4" style={{ backgroundColor: "#e05a1a" }} />
+                  <h3 className="text-white font-semibold text-xl mb-3">{goal.title}</h3>
+                  <p className="text-gray-400 leading-relaxed mb-6 max-w-2xl">{goal.description}</p>
+                  {validImages.length > 0 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      {validImages.slice(0, 3).map((img, i) => (
+                        <div
+                          key={i}
+                          className="rounded-xl overflow-hidden border border-white/5"
+                          style={{ aspectRatio: "4/3", backgroundColor: "#111" }}
+                        >
+                          <img
+                            src={img}
+                            alt={`${goal.title} ${i + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

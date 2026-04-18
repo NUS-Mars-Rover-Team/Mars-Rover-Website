@@ -2,10 +2,10 @@
   "hero": {
     "overline": "National University of Singapore",
     "title": "NUS Mars Rover Team",
-    "subtitle": "A multidisciplinary student team competing in the University Rover Challenge — building the next generation of autonomous planetary exploration systems.",
+    "subtitle": "A multidisciplinary student team competing in the University Rover Challenge while building the next generation of autonomous planetary exploration systems.",
     "stats": [
       { "label": "Members", "value": "30+" },
-      { "label": "Years Active", "value": "5+" }
+      { "label": "Years Active", "value": "3+" }
     ]
   },
   "about": {
@@ -13,7 +13,7 @@
     "heading": "Engineers, Researchers, and Explorers",
     "paragraphs": [
       "The NUS Mars Rover Team is a student-run organisation at the National University of Singapore, dedicated to designing and building a fully functional Mars rover from the ground up. Our team spans disciplines from mechanical and electrical engineering to computer science and biology, bringing diverse expertise to every challenge.",
-      "We compete annually in the University Rover Challenge (URC) in Utah, USA — one of the most prestigious student robotics competitions in the world. As we constantly push boundaries every year, each iteration brings a more rugged chassis, more versatile robotic arm, cutting-edge autonav, more reliable GNSS and comms, advanced drones and sophisticated science systems that take our exploration further."
+      "We compete annually in the University Rover Challenge (URC) in Utah, USA, one of the most prestigious student robotics competitions in the world. As we constantly push boundaries every year, each iteration brings a more rugged chassis, more versatile robotic arm, cutting-edge autonav, more reliable GNSS and comms, advanced drones and sophisticated science systems that take our exploration further."
     ],
     "subsystems": [
       { "title": "Autonav", "desc": "Autonomous GPS + terrain navigation" },
@@ -27,7 +27,7 @@
   "sarVideo": {
     "overline": "System Acceptance Review",
     "heading": "Our 2026 SAR Video",
-    "description": "Watch our full System Acceptance Review submission for URC 2026 — showcasing every subsystem, our rover's capabilities, and the team behind it.",
+    "description": "Watch our full System Acceptance Review submission for URC 2026, showcasing every subsystem, our rover's capabilities, and the team behind it.",
     "embedUrl": "https://www.youtube.com/embed/RMnJwoxsRVg"
   },
   "gallery": {
@@ -35,8 +35,8 @@
     "heading": "igNUS 2026",
     "description": "A closer look at our 2026 rover — purpose-built for the extreme conditions of the Utah desert and the demands of the URC competition tasks.",
     "featuredImage": "rover-photo.png",
-    "sideImages": ["rover-photo-2.png", "rover-photo-3.png"],
-    "bottomImages": ["rover-photo-4.png", "rover-photo-5.png", "rover-photo-6.png", "rover-photo-7.png"]
+    "sideImages": ["rover-photo-2.png"],
+    "bottomImages": ["rover-photo-3.png", "rover-photo-4.png"]
   },
   "joinUs": {
     "overline": "Get Involved",

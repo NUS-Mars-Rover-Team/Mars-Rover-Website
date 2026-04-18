@@ -14,6 +14,38 @@
       "Redesigned 7-DOF robotic arm",
       "Upgraded science payload with expanded detection capabilities",
       "Improved GNSS and long-range communications"
+    ],
+    "subteams": [
+      {
+        "name": "Chassis",
+        "writeup": "Placeholder writeup for Chassis — content coming soon.",
+        "images": [null, null, null, null]
+      },
+      {
+        "name": "Robotic Arm",
+        "writeup": "Placeholder writeup for Robotic Arm — content coming soon.",
+        "images": [null, null, null, null]
+      },
+      {
+        "name": "GNSS & Comms",
+        "writeup": "Placeholder writeup for GNSS & Comms — content coming soon.",
+        "images": [null, null, null, null]
+      },
+      {
+        "name": "Autonomous Navigation",
+        "writeup": "Placeholder writeup for Autonomous Navigation — content coming soon.",
+        "images": [null, null, null, null]
+      },
+      {
+        "name": "Drone",
+        "writeup": "Placeholder writeup for Drone — content coming soon.",
+        "images": [null, null, null, null]
+      },
+      {
+        "name": "Science",
+        "writeup": "Placeholder writeup for Science — content coming soon.",
+        "images": [null, null, null, null]
+      }
     ]
   },
   {
@@ -25,7 +57,39 @@
     "images": ["photo-1.jpg", "photo-2.jpg", "photo-3.jpg"],
     "pdrReport": null,
     "sarReport": null,
-    "upcomingFeatures": []
+    "upcomingFeatures": [],
+    "subteams": [
+      {
+        "name": "Chassis",
+        "writeup": "Placeholder writeup for Chassis — content coming soon.",
+        "images": [null, null, null, null]
+      },
+      {
+        "name": "Robotic Arm",
+        "writeup": "Placeholder writeup for Robotic Arm — content coming soon.",
+        "images": [null, null, null, null]
+      },
+      {
+        "name": "GNSS & Comms",
+        "writeup": "Placeholder writeup for GNSS & Comms — content coming soon.",
+        "images": [null, null, null, null]
+      },
+      {
+        "name": "Autonomous Navigation",
+        "writeup": "Placeholder writeup for Autonomous Navigation — content coming soon.",
+        "images": [null, null, null, null]
+      },
+      {
+        "name": "Drone",
+        "writeup": "Placeholder writeup for Drone — content coming soon.",
+        "images": [null, null, null, null]
+      },
+      {
+        "name": "Science",
+        "writeup": "Placeholder writeup for Science — content coming soon.",
+        "images": [null, null, null, null]
+      }
+    ]
   },
   {
     "year": 2025,

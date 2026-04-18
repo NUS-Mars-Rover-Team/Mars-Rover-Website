@@ -1,3 +1,4 @@
+import heroBg from "../../data/publications/hero-bg.png";
 import pubData from "../../data/publications/publications.json";
 
 const typeBadge: Record<string, { bg: string; text: string }> = {
@@ -13,11 +14,11 @@ export default function Publications() {
     <div className="min-h-screen bg-[#0a0a0a] text-white" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
 
       {/* ── Hero ── */}
-      <section className="relative flex items-end justify-start pt-14" style={{ minHeight: "90vh" }}>
+      <section className="relative flex items-end justify-start pt-14 min-h-[55vh] md:min-h-[90vh]">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/publications/hero-bg.png')",
+            backgroundImage: `url(${heroBg.src})`,
             backgroundSize: "cover",
             backgroundPosition: "center 20%",
             backgroundColor: "#111",

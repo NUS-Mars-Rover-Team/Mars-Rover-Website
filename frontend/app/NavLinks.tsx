@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Home", href: "/homepage" },
   { label: "About Us", href: "/aboutus" },
   { label: "Our Rovers", href: "/rovers" },
-  { label: "Events", href: "/events" },
+  { label: "News", href: "/news" },
   { label: "Meet the Team", href: "/team" },
   { label: "Publications", href: "/publications" },
   { label: "Contact Us", href: "/contact" },

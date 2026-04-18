@@ -1,21 +1,59 @@
+import Link from "next/link";
+import heroBg from "../../data/homepage/hero-bg.png";
+import roverPhoto from "../../data/homepage/rover-photo.png";
+import roverPhoto2 from "../../data/homepage/rover-photo-2.png";
+import roverPhoto3 from "../../data/homepage/rover-photo-3.png";
+import roverPhoto4 from "../../data/homepage/rover-photo-4.png";
 import content from "../../data/homepage/content.json";
-import events from "../../data/homepage/events.json";
+import events from "../../data/events/events.json";
+import contact from "../../data/contact/contact.json";
+
+const MailIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 7 10-7" />
+  </svg>
+);
+const InstagramIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4.5" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
+const LinkedInIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />
+  </svg>
+);
+const YouTubeIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" /><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" />
+  </svg>
+);
+
+const socials = [
+  { label: "Email", href: "/contact", Icon: MailIcon },
+  { label: "Instagram", href: contact.instagram, Icon: InstagramIcon },
+  { label: "LinkedIn", href: contact.linkedin, Icon: LinkedInIcon },
+  { label: "YouTube", href: contact.youtube, Icon: YouTubeIcon },
+];
+
+const sortedEvents = [...events].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
 
 export default function Homepage() {
-  const { hero, about, sarVideo, gallery, joinUs } = content;
+  const { hero, about, sarVideo, gallery } = content;
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
 
       {/* ── Hero ── */}
       <section
-        className="relative flex items-end justify-start pt-14"
-        style={{ minHeight: "90vh" }}
+        className="relative flex items-end justify-start pt-14 min-h-[55vh] md:min-h-[90vh]"
       >
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url('/homepage/hero-bg.png')",
+            backgroundImage: `url(${heroBg.src})`,
             backgroundSize: "cover",
             backgroundPosition: "center 40%",
             backgroundColor: "#111",
@@ -69,10 +107,10 @@ export default function Homepage() {
             ))}
             <div className="grid grid-cols-2 gap-4 mt-8">
               {about.subsystems.map((item) => (
-                <div key={item.title} className="rounded-lg p-4 border border-white/5" style={{ backgroundColor: "#141414" }}>
+                <Link key={item.title} href="/rovers" className="rounded-lg p-4 border border-white/5 block hover:border-[#e05a1a]/30 transition-colors" style={{ backgroundColor: "#141414" }}>
                   <div className="text-sm font-semibold text-white mb-1">{item.title}</div>
                   <div className="text-xs text-gray-500">{item.desc}</div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -81,7 +119,7 @@ export default function Homepage() {
             <div
               className="absolute inset-0"
               style={{
-                backgroundImage: `url('/homepage/${gallery.featuredImage}')`,
+                backgroundImage: `url(${roverPhoto.src})`,
                 backgroundSize: "contain",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -134,7 +172,7 @@ export default function Homepage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map((event) => (
+            {sortedEvents.map((event) => (
               <div
                 key={event.title}
                 className="rounded-xl p-6 border border-white/5 flex flex-col gap-3"
@@ -148,17 +186,6 @@ export default function Homepage() {
                 </span>
                 <h3 className="text-white font-semibold leading-snug">{event.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed flex-1">{event.description}</p>
-                {"link" in event && event.link && (
-                  <a
-                    href={event.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium mt-1 self-start"
-                    style={{ color: "#e05a1a" }}
-                  >
-                    Watch →
-                  </a>
-                )}
               </div>
             ))}
           </div>
@@ -176,7 +203,7 @@ export default function Homepage() {
             <p className="text-gray-400 mt-3 max-w-xl">{gallery.description}</p>
           </div>
           {/* Gallery grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:items-stretch">
             {/* Featured large image */}
             <div
               className="md:col-span-2 rounded-2xl overflow-hidden border border-white/5"
@@ -185,55 +212,43 @@ export default function Homepage() {
               <div
                 className="w-full h-full"
                 style={{
-                  backgroundImage: `url('/homepage/${gallery.featuredImage}')`,
+                  backgroundImage: `url(${roverPhoto.src})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center 60%",
                 }}
               />
             </div>
-            {/* Side smaller slots */}
-            <div className="flex flex-col gap-4">
-              {gallery.sideImages.map((img, i) => (
-                <div
-                  key={i}
-                  className="flex-1 rounded-2xl overflow-hidden border border-white/5 flex items-center justify-center"
-                  style={{ backgroundColor: "#111", minHeight: "140px" }}
-                >
-                  <div
-                    className="w-full h-full"
-                    style={{
-                      backgroundImage: `url('/homepage/${img}')`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      minHeight: "140px",
-                    }}
-                  />
-                  <div className="absolute text-xs text-gray-600 pointer-events-none">
-                    Add {img}
-                  </div>
-                </div>
-              ))}
+            {/* Side vertical image */}
+            <div
+              className="rounded-2xl overflow-hidden border border-white/5 min-h-48"
+              style={{ backgroundColor: "#111" }}
+            >
+              <div
+                className="w-full h-full"
+                style={{
+                  backgroundImage: `url(${roverPhoto2.src})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              />
             </div>
           </div>
           {/* Bottom row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-            {gallery.bottomImages.map((img, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            {[roverPhoto3, roverPhoto4].map((img, i) => (
               <div
                 key={i}
                 className="rounded-2xl overflow-hidden border border-white/5 relative"
-                style={{ aspectRatio: "1/1", backgroundColor: "#111" }}
+                style={{ aspectRatio: "16/9", backgroundColor: "#111" }}
               >
                 <div
                   className="w-full h-full absolute inset-0"
                   style={{
-                    backgroundImage: `url('/homepage/${img}')`,
+                    backgroundImage: `url(${img.src})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
                 />
-                <div className="absolute inset-0 flex items-center justify-center text-xs text-gray-700 pointer-events-none">
-                  Add {img}
-                </div>
               </div>
             ))}
           </div>
@@ -244,20 +259,22 @@ export default function Homepage() {
       <section className="py-24 px-6" style={{ backgroundColor: "#0a0a0a" }}>
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-sm font-medium tracking-widest uppercase mb-4" style={{ color: "#e05a1a" }}>
-            {joinUs.overline}
+            Get Involved
           </p>
-          <h2 className="text-4xl font-bold text-white mb-4">{joinUs.heading}</h2>
-          <p className="text-gray-400 max-w-md mx-auto mb-10">{joinUs.description}</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Join Us on Our Journey</h2>
+          <p className="text-gray-400 max-w-md mx-auto mb-10">
+            Follow our progress, reach out to collaborate, or join the team — we&apos;re always looking for passionate people.
+          </p>
           <div className="flex flex-wrap justify-center gap-4">
-            {joinUs.socials.map((social) => (
+            {socials.map(({ label, href, Icon }) => (
               <a
-                key={social.label}
-                href={social.href}
-                target={social.href.startsWith("mailto") ? undefined : "_blank"}
+                key={label}
+                href={href}
+                target={href.startsWith("/") ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-lg border text-sm font-medium transition-colors text-[#ccc] border-[#2a2a2a] bg-[#111] hover:text-[#e05a1a] hover:border-[#e05a1a]/30"
+                className="px-6 py-3 rounded-lg border text-sm font-medium transition-colors text-[#ccc] border-[#2a2a2a] bg-[#111] hover:text-[#e05a1a] hover:border-[#e05a1a]/30 flex items-center gap-2"
               >
-                {social.label}
+                <Icon />{label}
               </a>
             ))}
           </div>

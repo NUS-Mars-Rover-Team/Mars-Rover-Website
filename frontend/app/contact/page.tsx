@@ -1,10 +1,54 @@
 import contactData from "../../data/contact/contact.json";
 
-const socials = [
-  { label: "Email", href: `mailto:${contactData.email}`, display: contactData.email },
-  { label: "Instagram", href: contactData.instagram, display: "@nusmarsteam" },
-  { label: "LinkedIn", href: contactData.linkedin, display: "NUS Mars Rover Team" },
-  { label: "YouTube", href: contactData.youtube, display: "NUS Mars Rover Team" },
+const MailIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="4" width="20" height="16" rx="2" />
+    <path d="M2 7l10 7 10-7" />
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" />
+    <circle cx="12" cy="12" r="4.5" />
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const LinkedInIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const YouTubeIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" />
+  </svg>
+);
+
+const socialLinks = [
+  {
+    label: "Instagram",
+    href: contactData.instagram,
+    display: "@nusroverteam",
+    Icon: InstagramIcon,
+  },
+  {
+    label: "LinkedIn",
+    href: contactData.linkedin,
+    display: "NUS Mars Rover Team",
+    Icon: LinkedInIcon,
+  },
+  {
+    label: "YouTube",
+    href: contactData.youtube,
+    display: "@nusmarsroverteam",
+    Icon: YouTubeIcon,
+  },
 ];
 
 export default function ContactUs() {
@@ -24,21 +68,36 @@ export default function ContactUs() {
             {contactData.tagline}
           </p>
 
-          {/* Contact cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {socials.map((s) => (
+          {/* Email — display only, not a link */}
+          <div
+            className="rounded-xl p-6 border border-white/5 text-left mb-4 flex items-center gap-4"
+            style={{ backgroundColor: "#111" }}
+          >
+            <span className="text-[#555]"><MailIcon /></span>
+            <div>
+              <p className="text-xs font-medium tracking-widest uppercase mb-1 text-[#555]">Email</p>
+              <p className="text-white font-medium text-sm">{contactData.email}</p>
+            </div>
+          </div>
+
+          {/* Social links */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {socialLinks.map(({ label, href, display, Icon }) => (
               <a
-                key={s.label}
-                href={s.href}
-                target={s.href.startsWith("mailto") ? undefined : "_blank"}
+                key={label}
+                href={href}
+                target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-xl p-6 border text-left transition-colors group border-white/5 hover:border-[#e05a1a]/30"
+                className="rounded-xl p-6 border text-left transition-colors group border-white/5 hover:border-[#e05a1a]/30 flex items-center gap-4"
                 style={{ backgroundColor: "#111" }}
               >
-                <p className="text-xs font-medium tracking-widest uppercase mb-2 text-[#555] group-hover:text-[#e05a1a] transition-colors">
-                  {s.label}
-                </p>
-                <p className="text-white font-medium text-sm">{s.display}</p>
+                <span className="text-[#555] group-hover:text-[#e05a1a] transition-colors"><Icon /></span>
+                <div>
+                  <p className="text-xs font-medium tracking-widest uppercase mb-1 text-[#555] group-hover:text-[#e05a1a] transition-colors">
+                    {label}
+                  </p>
+                  <p className="text-white font-medium text-sm">{display}</p>
+                </div>
               </a>
             ))}
           </div>

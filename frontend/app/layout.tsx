@@ -41,7 +41,7 @@ export default function RootLayout({
               >
                 NUS
               </div>
-              <span className="font-semibold text-white text-sm">Mars Rover Team</span>
+              <span className="hidden sm:inline font-semibold text-white text-sm">Mars Rover Team</span>
             </Link>
 
             {/* Divider */}
