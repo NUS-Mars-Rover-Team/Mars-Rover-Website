@@ -75,7 +75,7 @@ export default function AboutUs() {
           <h2 className="text-3xl font-bold text-white mb-12">Outreach Goals</h2>
           <div className="flex flex-col gap-12">
             {content.outreachGoals.map((goal) => {
-              const validImages = goal.images.filter((img): img is string => img !== null);
+              const validImages = goal.images.filter((img): img is NonNullable<typeof img> => img !== null);
               return (
                 <div key={goal.title} className="border-t border-white/5 pt-10">
                   <div className="w-8 h-1 rounded-full mb-4" style={{ backgroundColor: "#e05a1a" }} />
