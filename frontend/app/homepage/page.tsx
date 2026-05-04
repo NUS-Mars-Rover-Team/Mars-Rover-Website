@@ -48,7 +48,7 @@ export default function Homepage() {
 
       {/* ── Hero ── */}
       <section
-        className="relative flex items-end justify-start pt-14 min-h-[55vh] md:min-h-[90vh]"
+        className="relative flex items-end justify-start pt-14 min-h-[75vh] md:min-h-[90vh]"
       >
         <div
           className="absolute inset-0"
