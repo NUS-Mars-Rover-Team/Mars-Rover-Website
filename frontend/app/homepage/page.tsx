@@ -5,7 +5,7 @@ import roverPhoto2 from "../../data/homepage/rover-photo-2.png";
 import roverPhoto3 from "../../data/homepage/rover-photo-3.png";
 import roverPhoto4 from "../../data/homepage/rover-photo-4.png";
 import content from "../../data/homepage/content.json";
-import events from "../../data/events/events.json";
+import events from "../../data/news/news.json";
 import contact from "../../data/contact/contact.json";
 
 const MailIcon = () => (

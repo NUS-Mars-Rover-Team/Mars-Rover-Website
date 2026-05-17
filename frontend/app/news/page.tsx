@@ -1,5 +1,5 @@
-import heroBg from "../../data/events/hero-bg.png";
-import events from "../../data/events/events.json";
+import heroBg from "../../data/news/hero-bg.png";
+import events from "../../data/news/news.json";
 
 type NewsEvent = {
   title: string;
