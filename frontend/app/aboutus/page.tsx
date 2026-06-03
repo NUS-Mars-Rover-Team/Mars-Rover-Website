@@ -7,7 +7,7 @@ export default function AboutUs() {
     <div className="min-h-screen bg-[#0a0a0a] text-white" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
 
       {/* ── Hero ── */}
-      <section className="relative flex items-end justify-start pt-14 min-h-[55vh] md:min-h-[90vh]">
+      <section className="relative flex items-end justify-start pt-14 min-h-[55vh] md:min-h-[100vh]">
         <div
           className="absolute inset-0"
           style={{

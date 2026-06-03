@@ -21,7 +21,7 @@ Find the rover entry by `year` and edit its fields:
   "pdrReport": null,
   "sarReport": null,
   "upcomingFeatures": [],
-  "images": ["photo-1.jpg", "photo-2.jpg"],
+  "images": ["photo-1.png", "photo-2.png", "photo-3.png"],
   "subteams": [ ... ]
 }
 ```

@@ -5,7 +5,7 @@
     {
       "title": "University Outreach",
       "description": "Engaging NUS students across all faculties to join, collaborate, and grow through hands-on engineering challenges that go beyond the classroom.",
-      "images": [null, null, null]
+      "images": ["hero-bg.png", null, null]
     },
     {
       "title": "STEM Education",

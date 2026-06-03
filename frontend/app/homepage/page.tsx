@@ -46,9 +46,9 @@ export default function Homepage() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
 
-      {/* ── Hero ── */}
+      {/* ── Hero ── uncomment to revert back to standard layout once nicer landscape photo is found
       <section
-        className="relative flex items-end justify-start pt-14 min-h-[75vh] md:min-h-[90vh]"
+        className="relative flex items-end justify-start pt-14 min-h-[75vh] md:min-h-[100vh]"
       >
         <div
           className="absolute inset-0"
@@ -88,7 +88,61 @@ export default function Homepage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/* ── Hero ── */}
+<section
+  className="relative flex items-center md:items-end justify-start pt-24 pb-12 md:pt-14 min-h-[75vh] md:min-h-[100vh]"
+  style={{ backgroundColor: "#000000" }} // Forces background to pure black
+>
+  
+  {/* Soft Vignette Overlay */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "linear-gradient(to right, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.4) 100%), linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 40%)",
+    }}
+  />
+  
+  {/* Main Layout Container */}
+  <div className="relative z-10 max-w-6xl mx-auto px-8 pb-12 md:pb-20 w-full flex flex-col md:flex-row md:items-center md:justify-between gap-12 md:gap-16">
+    
+    {/* Left Column: Text Content */}
+    <div className="order-2 md:order-1 flex-1 min-w-[320px] md:max-w-2xl">
+      <p className="text-sm font-medium tracking-widest uppercase mb-4" style={{ color: "#e05a1a" }}>
+        {hero.overline}
+      </p>
+      <h1
+        className="font-extrabold leading-none mb-6 text-white"
+        style={{ fontSize: "clamp(2.8rem, 6vw, 5.5rem)" }}
+      >
+        {hero.title.split(" ").slice(0, 2).join(" ")}<br />{hero.title.split(" ").slice(2).join(" ")}
+      </h1>
+      <p className="text-gray-300 max-w-md text-lg leading-relaxed mb-8">
+        {hero.subtitle}
+      </p>
+      <div className="flex gap-8">
+        {hero.stats.map((s) => (
+          <div key={s.label}>
+            <div className="text-3xl font-bold" style={{ color: "#e05a1a" }}>{s.value}</div>
+            <div className="text-sm text-gray-400 mt-0.5">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Right Column: Emphasized Logo Image */}
+    <div className="order-1 md:order-2 flex justify-center items-center flex-1">
+      <img 
+        src={heroBg.src} // Replace with your logo's explicit import variable if separate from heroBg
+        alt="NUS Mars Rover Team Logo" 
+        className="w-64 h-64 sm:w-80 sm:h-80 md:w-[480px] md:h-[480px] lg:w-[400px] lg:h-[400px] object-contain transition-transform duration-300 hover:scale-105"
+      />
+    </div>
+
+  </div>
+</section>
 
       {/* ── About the Team ── */}
       <section className="py-24 px-6" style={{ backgroundColor: "#0a0a0a" }}>

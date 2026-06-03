@@ -54,39 +54,24 @@
     "status": "current",
     "writeup": "igNUS 2026 represents our most ambitious build to date. Featuring a rugged new chassis designed for the Utah desert terrain, a more versatile 6-DOF robotic arm, cutting-edge autonav with improved obstacle avoidance, advanced GNSS and communications systems, and an upgraded science payload capable of detecting signs of past or present life.",
     "sarVideo": "https://www.youtube.com/embed/RMnJwoxsRVg",
-    "images": ["photo-1.jpg", "photo-2.jpg", "photo-3.jpg"],
-    "pdrReport": null,
-    "sarReport": null,
+    "images": ["photo-1.png", "photo-2.png"],
+    "pdrReport": ["publications"],
+    "sarReport": ["publications"],
     "upcomingFeatures": [],
     "subteams": [
       {
-        "name": "Chassis",
-        "writeup": "Placeholder writeup for Chassis — content coming soon.",
-        "images": [null, null, null, null]
-      },
-      {
         "name": "Robotic Arm",
-        "writeup": "Placeholder writeup for Robotic Arm — content coming soon.",
-        "images": [null, null, null, null]
+        "writeup": "The Robotic Arm subteam is responsible for developing the rover’s primary manipulator. Our work encompasses mechanical fabrication, custom electronics, and software integration. The arm has 5 degrees of freedom, utilizing a 4-bar linkage. High-level control is managed by an NVIDIA Jetson Orin NX, while a custom STM32-based PCB on the end effector handles low-level actuation via CAN communication. Running on the ROS 2 framework, the software stack employs MoveIt 2 for trajectory planning and inverse kinematics. Advanced perception is provided by a depth camera mounted on the end effector, which uses ArUco markers for autonomous object recognition.",
+        "images": ["arm-1.png", null, null, null]
       },
       {
         "name": "GNSS & Comms",
-        "writeup": "Placeholder writeup for GNSS & Comms — content coming soon.",
-        "images": [null, null, null, null]
-      },
-      {
-        "name": "Autonomous Navigation",
-        "writeup": "Placeholder writeup for Autonomous Navigation — content coming soon.",
-        "images": [null, null, null, null]
-      },
-      {
-        "name": "Drone",
-        "writeup": "Placeholder writeup for Drone — content coming soon.",
+        "writeup": "The communications team develops and integrates the rover’s wireless networking, positioning, and telemetry systems. We design and validate a dual-band RF system (2.4 GHz and 900 MHz), optimize links, select antennas, and implement automatic steering to maintain reliable long-range connectivity. We build custom PCBs for battery, power, and antenna motor control, enable low-latency UDP video streaming, and create a modular GUI that brings together live video, communication diagnostics, rover telemetry, as well as information from other subsystems, giving operators a unified platform to monitor and control the rover efficiently.",
         "images": [null, null, null, null]
       },
       {
         "name": "Science",
-        "writeup": "Placeholder writeup for Science — content coming soon.",
+        "writeup": "Our science subsystem looks for signs of life by leveraging a comprehensive soil drilling and caching system and two onboard, in-house developed scientific instruments, controlled and analyzed through the GUI. An auger drill bores 15cm into the ground and brings the soil up to a removeable cache with transparent windows and servo-actuated door. The UV fluorescence microscope with in built focus stacking then images the collected cache for autoflourescent biosignatures. Lastly, the Raman spectrometer shines a focused laser that allows for the resulting molecule specific spectral peaks to be read and identified.",
         "images": [null, null, null, null]
       }
     ]
