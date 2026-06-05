@@ -4,7 +4,16 @@ import { useEffect } from "react";
 import { createImageMap, resolveImageUrl } from "../lib/imageUtils";
 import events from "../../data/news/news.json";
 
-const newsImageMap = createImageMap(require.context("../../data/news", false, /\.(png|jpe?g|svg|webp)$/));
+type WebpackRequireContext = {
+  keys: () => string[];
+  <T = unknown>(id: string): T;
+};
+
+const newsImageMap = createImageMap(
+  (require as unknown as {
+    context: (path: string, recursive: boolean, regexp: RegExp) => WebpackRequireContext;
+  }).context("../../data/news", false, /\.(png|jpe?g|svg|webp)$/)
+);
 
 type NewsEvent = {
   title: string;

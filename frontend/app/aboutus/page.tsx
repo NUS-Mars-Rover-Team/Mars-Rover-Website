@@ -2,7 +2,16 @@ import Link from "next/link";
 import content from "../../data/aboutus/content.json";
 import { createImageMap, resolveImageUrl } from "../lib/imageUtils";
 
-const aboutImageMap = createImageMap(require.context("../../data/aboutus", false, /\.(png|jpe?g|svg|webp)$/));
+type WebpackRequireContext = {
+  keys: () => string[];
+  <T = unknown>(id: string): T;
+};
+
+const aboutImageMap = createImageMap(
+  (require as unknown as {
+    context: (path: string, recursive: boolean, regexp: RegExp) => WebpackRequireContext;
+  }).context("../../data/aboutus", false, /\.(png|jpe?g|svg|webp)$/)
+);
 const aboutImageUrl = (name: string) => resolveImageUrl(aboutImageMap, name);
 
 export default function AboutUs() {
