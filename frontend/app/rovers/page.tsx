@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { createImageMap, resolveImageUrl } from "../lib/imageUtils";
+import { createImageMap, resolveImageUrl, typedRequireContext } from "../lib/imageUtils";
 import rovers from "../../data/rovers/rovers.json";
 
-const roverImageMap = createImageMap(require.context("../../data/rovers", false, /\.(png|jpe?g|svg|webp)$/));
+const roverImageMap = createImageMap(typedRequireContext((require as any).context("../../data/rovers", false, /\.(png|jpe?g|svg|webp)$/)));
 
 const roverImageUrl = (name: string) => resolveImageUrl(roverImageMap, name);
 

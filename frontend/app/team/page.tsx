@@ -3,17 +3,10 @@
 import { useState } from "react";
 import heroBg from "../../data/team/hero-bg.png";
 import allTeamData from "../../data/team/members.json";
-import { createImageMap, resolveImageUrl } from "../lib/imageUtils";
+import { createImageMap, resolveImageUrl, typedRequireContext } from "../lib/imageUtils";
 
-declare const require: {
-  context: (path: string, recursive: boolean, regexp: RegExp) => {
-    keys: () => string[];
-    (key: string): unknown;
-  };
-};
-
-const teamImages2025 = createImageMap(require.context("../../data/team/2025", false, /\.(png|jpe?g|svg|webp)$/));
-const teamImages2026 = createImageMap(require.context("../../data/team/2026", false, /\.(png|jpe?g|svg|webp)$/));
+const teamImages2025 = createImageMap(typedRequireContext((require as any).context("../../data/team/2025", false, /\.(png|jpe?g|svg|webp)$/)));
+const teamImages2026 = createImageMap(typedRequireContext((require as any).context("../../data/team/2026", false, /\.(png|jpe?g|svg|webp)$/)));
 
 function resolveTeamPhoto(year: number, photo: string) {
   if (!photo) return "";

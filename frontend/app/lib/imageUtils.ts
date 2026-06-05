@@ -2,13 +2,14 @@ type ImageAsset =
   | string
   | { src?: string; default?: { src?: string } };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-declare const require: {
-  context: (path: string, recursive: boolean, regexp: RegExp) => {
-    keys: () => string[];
-    (key: string): ImageAsset;
-  };
+export type WebpackRequireContext = {
+  keys: () => string[];
+  <T = ImageAsset>(key: string): T;
 };
+
+export function typedRequireContext(context: WebpackRequireContext): WebpackRequireContext {
+  return context;
+}
 
 export type ImageMap = Record<string, string>;
 
