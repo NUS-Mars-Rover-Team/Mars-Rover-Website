@@ -80,7 +80,7 @@ export default function Publications() {
             return (
               <div key={year}>
                 <h2 className="text-xl font-bold text-white mb-6 pb-3 border-b border-white/5">{year}</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {yearReports.map((report) => {
                     const badge = typeBadge[report.type] ?? typeBadge.Other;
                     return (

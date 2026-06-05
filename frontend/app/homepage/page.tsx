@@ -40,6 +40,12 @@ const sortedEvents = [...events].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 );
 
+const eventId = (title: string) =>
+  title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
 export default function Homepage() {
   const { hero, about, sarVideo, gallery } = content;
 
@@ -227,9 +233,10 @@ export default function Homepage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sortedEvents.map((event) => (
-              <div
+              <Link
                 key={event.title}
-                className="rounded-xl p-6 border border-white/5 flex flex-col gap-3"
+                href={`/news#${eventId(event.title)}`}
+                className="block rounded-xl p-6 border border-white/5 flex flex-col gap-3 transition hover:border-[#e05a1a]/40"
                 style={{ backgroundColor: "#111" }}
               >
                 <span
@@ -240,7 +247,7 @@ export default function Homepage() {
                 </span>
                 <h3 className="text-white font-semibold leading-snug">{event.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed flex-1">{event.description}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

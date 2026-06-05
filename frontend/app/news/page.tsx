@@ -1,17 +1,39 @@
-import heroBg from "../../data/news/hero-bg.png";
+"use client";
+
+import { useEffect } from "react";
+import { createImageMap, resolveImageUrl } from "../lib/imageUtils";
 import events from "../../data/news/news.json";
+
+const newsImageMap = createImageMap(require.context("../../data/news", false, /\.(png|jpe?g|svg|webp)$/));
 
 type NewsEvent = {
   title: string;
   date: string;
   description: string;
   images: (string | null)[];
+  link?: string;
+  linkLabel?: string;
 };
 
 export default function News() {
   const sorted = [...(events as NewsEvent[])].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
+
+  const eventId = (title: string) =>
+    title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+    const target = document.getElementById(hash);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
@@ -21,7 +43,7 @@ export default function News() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url(${heroBg.src})`,
+            backgroundImage: `url(${resolveImageUrl(newsImageMap, "hero-bg.png")})`,
             backgroundSize: "cover",
             backgroundPosition: "center 20%",
             backgroundColor: "#111",
@@ -52,7 +74,7 @@ export default function News() {
           {sorted.map((event) => {
             const validImages = event.images.filter((img): img is string => img !== null);
             return (
-              <div key={event.title}>
+              <div key={event.title} id={eventId(event.title)} className="scroll-mt-24">
                 <div className="mb-6">
                   <span
                     className="text-xs font-medium px-2 py-0.5 rounded-full inline-block mb-3"
@@ -62,10 +84,20 @@ export default function News() {
                   </span>
                   <h2 className="text-2xl font-bold text-white mb-2">{event.title}</h2>
                   <p className="text-gray-400 max-w-2xl leading-relaxed">{event.description}</p>
+                  {event.link && (
+                    <a
+                      href={event.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-block text-[#e05a1a] font-semibold underline decoration-[#e05a1a]/70 underline-offset-2 hover:text-orange-300"
+                    >
+                      {event.linkLabel ?? "Learn more"} ↗
+                    </a>
+                  )}
                 </div>
 
                 {validImages.length > 0 && (
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {validImages.map((img, i) => (
                       <div
                         key={i}
@@ -73,7 +105,7 @@ export default function News() {
                         style={{ aspectRatio: "4/3", backgroundColor: "#111" }}
                       >
                         <img
-                          src={img}
+                          src={resolveImageUrl(newsImageMap, img)}
                           alt={`${event.title} ${i + 1}`}
                           className="w-full h-full object-cover"
                         />

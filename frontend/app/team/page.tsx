@@ -3,6 +3,27 @@
 import { useState } from "react";
 import heroBg from "../../data/team/hero-bg.png";
 import allTeamData from "../../data/team/members.json";
+import { createImageMap, resolveImageUrl } from "../lib/imageUtils";
+
+declare const require: {
+  context: (path: string, recursive: boolean, regexp: RegExp) => {
+    keys: () => string[];
+    (key: string): unknown;
+  };
+};
+
+const teamImages2025 = createImageMap(require.context("../../data/team/2025", false, /\.(png|jpe?g|svg|webp)$/));
+const teamImages2026 = createImageMap(require.context("../../data/team/2026", false, /\.(png|jpe?g|svg|webp)$/));
+
+function resolveTeamPhoto(year: number, photo: string) {
+  if (!photo) return "";
+  if (/^(https?:)?\/\//.test(photo) || photo.startsWith("/")) {
+    return photo;
+  }
+
+  const imageMap = year === 2025 ? teamImages2025 : year === 2026 ? teamImages2026 : {};
+  return resolveImageUrl(imageMap, photo);
+}
 
 type Member = {
   name: string;
@@ -24,8 +45,8 @@ type YearData = {
   subsystems: Subsystem[];
 };
 
-function MemberCard({ member, highlight }: { member: Member; highlight: boolean }) {
-  const imgSrc = member.photo.startsWith("http") ? member.photo : member.photo ? `/team/${member.photo}` : "";
+function MemberCard({ member, year, highlight }: { member: Member; year: number; highlight: boolean }) {
+  const imgSrc = resolveTeamPhoto(year, member.photo);
   return (
     <div
       className="rounded-xl overflow-hidden border"
@@ -140,7 +161,7 @@ export default function MeetTheTeam() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {yearData.leadership.map((leader, i) => (
-                  <MemberCard key={i} member={leader} highlight={!!leader.isLead} />
+                  <MemberCard key={i} member={leader} year={activeYear} highlight={!!leader.isLead} />
                 ))}
               </div>
             </div>
@@ -158,7 +179,7 @@ export default function MeetTheTeam() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {subsystem.members.map((member, i) => (
-                  <MemberCard key={i} member={member} highlight={!!member.isLead} />
+                  <MemberCard key={i} member={member} year={activeYear} highlight={!!member.isLead} />
                 ))}
               </div>
             </div>

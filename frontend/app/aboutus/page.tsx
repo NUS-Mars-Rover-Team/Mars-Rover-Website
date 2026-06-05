@@ -1,6 +1,9 @@
 import Link from "next/link";
-import heroBg from "../../data/aboutus/hero-bg.png";
 import content from "../../data/aboutus/content.json";
+import { createImageMap, resolveImageUrl } from "../lib/imageUtils";
+
+const aboutImageMap = createImageMap(require.context("../../data/aboutus", false, /\.(png|jpe?g|svg|webp)$/));
+const aboutImageUrl = (name: string) => resolveImageUrl(aboutImageMap, name);
 
 export default function AboutUs() {
   return (
@@ -11,7 +14,7 @@ export default function AboutUs() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url(${heroBg.src})`,
+            backgroundImage: `url(${aboutImageUrl("hero-bg.png")})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundColor: "#111",
@@ -75,22 +78,22 @@ export default function AboutUs() {
           <h2 className="text-3xl font-bold text-white mb-12">Outreach Goals</h2>
           <div className="flex flex-col gap-12">
             {content.outreachGoals.map((goal) => {
-              const validImages = goal.images.filter((img): img is NonNullable<typeof img> => img !== null);
+              const validImages = (goal.images ?? []).filter((img): img is string => typeof img === "string" && img.trim() !== "");
               return (
                 <div key={goal.title} className="border-t border-white/5 pt-10">
                   <div className="w-8 h-1 rounded-full mb-4" style={{ backgroundColor: "#e05a1a" }} />
                   <h3 className="text-white font-semibold text-xl mb-3">{goal.title}</h3>
                   <p className="text-gray-400 leading-relaxed mb-6 max-w-2xl">{goal.description}</p>
                   {validImages.length > 0 && (
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                      {validImages.slice(0, 3).map((img, i) => (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                      {validImages.map((img, i) => (
                         <div
                           key={i}
                           className="rounded-xl overflow-hidden border border-white/5"
                           style={{ aspectRatio: "4/3", backgroundColor: "#111" }}
                         >
                           <img
-                            src={img}
+                            src={aboutImageUrl(img)}
                             alt={`${goal.title} ${i + 1}`}
                             className="w-full h-full object-cover"
                           />

@@ -6,14 +6,7 @@
       "year": 2026,
       "type": "SAR",
       "description": "System Acceptance Review submission for URC 2026, covering all subsystems of igNUS 2026 including autonav, robotic arm, science mission, GNSS & comms, chassis, and drone.",
-      "link": null
-    },
-    {
-      "title": "PDR Report 2026",
-      "year": 2026,
-      "type": "PDR",
-      "description": "Preliminary Design Review for URC 2026, detailing the design rationale, trade studies, and system architecture of igNUS 2026.",
-      "link": null
+      "link": "https://drive.google.com/file/d/1BWVSa6lm39X17Dv1HdwGNzy75r2k82Vk/view?usp=drive_link"
     },
     {
       "title": "SAR Video 2026",
@@ -23,11 +16,25 @@
       "link": "https://www.youtube.com/watch?v=RMnJwoxsRVg"
     },
     {
-      "title": "PDR Report 2025",
-      "year": 2025,
+      "title": "PDR Report 2026",
+      "year": 2026,
       "type": "PDR",
-      "description": "Preliminary Design Review for URC 2025, covering the design and engineering decisions behind igNUS 2025.",
-      "link": null
+      "description": "Preliminary Design Review for URC 2026, detailing the design rationale, trade studies, and system architecture of igNUS 2026.",
+      "link": "https://drive.google.com/file/d/19SLHxxdcqNwWBXoR_8p6q6s-44kCvUkt/view?usp=drive_link"
+    },
+    {
+      "title": "SAR Report 2025",
+      "year": 2025,
+      "type": "SAR",
+      "description": "System Acceptance Review submission for URC 2026, covering all subsystems of igNUS 2026 including autonav, robotic arm, science mission, GNSS & comms, chassis, and drone.",
+      "link": "https://drive.google.com/file/d/1Zi8tgkrFpbVKtmoQt3DVMXLicQmf1863/view?usp=drive_link"
+    },
+    {
+      "title": "SAR Video 2025",
+      "year": 2025,
+      "type": "SAR",
+      "description": "System Acceptance Review submission for URC 2026, showcasing igNUS 2026's capabilities across all competition tasks.",
+      "link": "https://youtu.be/RKMMFt4I3EE"
     }
   ]
 }

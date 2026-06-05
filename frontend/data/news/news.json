@@ -1,14 +1,26 @@
-[
+[ 
+  {
+    "title": "NUS ECE Open Day 2026",
+    "date": "2026-5-16",
+    "description": "Our team was honored to showcase igNUS 2026 at the annual NUS ECE Open Day '26 to incoming freshmen, faculty and industry partners. More information here:",
+    "link": "https://www.instagram.com/p/DYjaQSKGM6y/?img_index=1",
+    "linkLabel": "More Details Here:",
+    "images": ["ece_open_day1.png", "ece_open_day2.png", "ece_open_day3.png"]
+  },
   {
     "title": "EDIC Project Showcase 2026",
     "date": "2026-04-17",
     "description": "The NUS Mars Rover Team showcased igNUS 2026 at the Engineering Design and Innovation Centre annual showcase, demonstrating our autonomous navigation capabilities and robotic arm to faculty, industry guests, and fellow students.",
-    "images": ["photo1.png", null, null]
+    "link": "https://www.linkedin.com/posts/nus-mars-rover-team_a-huge-thank-you-to-the-nus-department-of-activity-7450142013750149120-s1Xd?utm_source=share&utm_medium=member_desktop&rcm=ACoAADVtvUsBGYY_TTYOFPGpepAvpJ1PEdEBGVc",
+    "linkLabel": "More Details Here:",
+    "images": ["edic1.png", null, null]
   },
   {
     "title": "ExCELLence 2026 (ECE Project Showcase)",
     "date": "2026-04-15",
     "description": "The NUS Mars Rover Team participated in the yearly ECE Project Showcase at the Engineering Auditorium, exhibiting our chassis, robotic arm, autonav and science capabilities to faculty, industry guests and fellow students.",
+    "link": "https://cde.nus.edu.sg/ece/nuseceprojectshowcase2026/",
+    "linkLabel": "More Details Here:",
     "images": []
   }
 ]

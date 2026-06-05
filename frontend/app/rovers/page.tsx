@@ -1,8 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import heroBg from "../../data/rovers/hero-bg.png";
+import { createImageMap, resolveImageUrl } from "../lib/imageUtils";
 import rovers from "../../data/rovers/rovers.json";
+
+const roverImageMap = createImageMap(require.context("../../data/rovers", false, /\.(png|jpe?g|svg|webp)$/));
+
+const roverImageUrl = (name: string) => resolveImageUrl(roverImageMap, name);
 
 type Subteam = {
   name: string;
@@ -42,7 +46,7 @@ export default function OurRovers() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url(${heroBg.src})`,
+            backgroundImage: `url(${roverImageUrl("hero-bg.png")})`,
             backgroundSize: "cover",
             backgroundPosition: "center 20%",
             backgroundColor: "#111",
@@ -182,15 +186,15 @@ export default function OurRovers() {
                       <h4 className="text-white font-semibold text-xl mb-3">{subteam.name}</h4>
                       <p className="text-gray-400 leading-relaxed mb-6 max-w-2xl">{subteam.writeup}</p>
                       {validImages.length > 0 && (
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                          {validImages.slice(0, 4).map((img, i) => (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                          {validImages.map((img, i) => (
                             <div
                               key={i}
                               className="rounded-xl overflow-hidden border border-white/5"
                               style={{ aspectRatio: "4/3", backgroundColor: "#111" }}
                             >
                               <img
-                                src={img}
+                                src={roverImageUrl(img)}
                                 alt={`${subteam.name} ${i + 1}`}
                                 className="w-full h-full object-cover"
                               />
